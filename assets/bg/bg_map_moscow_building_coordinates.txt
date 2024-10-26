@@ -1,0 +1,12 @@
+format: (top left X, top left Y, width, height)
+
+apartment(96, 192, 132, 288)
+grocer(48, 528, 144, 144)
+bakery(48, 576, 144, 96)
+bank(48, 864, 396, 168)
+autoshop(492, 864, 216, 168)
+bunker(792, 924, 120, 108)
+technology(804, 648, 108, 168)
+university(756, 288, 156, 312)
+partyHQ(600, 96, 108, 288)
+gulag(288, 192, 264, 192)
