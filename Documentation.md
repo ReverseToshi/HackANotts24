@@ -41,3 +41,32 @@
 ## Nice To Haves
 -   Forex
 -   News from the time
+
+## Credit Score shit
+Experian Credit Score:  This model uses a scale from 0 to 999, with the following bands:
+
+    Excellent: 720-999
+    Good: 620-719
+    Fair: 520-619
+    Poor: 480-519
+    Bad: Below 480
+
+ 
+
+Here are the Experian credit score bands with Soviet-era inspired equivalents: 
+
+    Excellent: 720-999 
+        Patriotov Kredit  (Credit of a Patriot): For those who have demonstrated exemplary credit behavior, as worthy of the great Soviet state.
+         
+    Good: 620-719 
+        Rabochii Klass  (Working Class Credit): For individuals with stable employment and manageable debt, reflecting the industrious spirit of the Soviet working class.
+         
+    Fair: 520-619 
+        Komsomolov Kredit  (Young Communist League Credit): For those who have shown promise but may require a bit more guidance or monitoring, echoing the ideals of the Young Communist League's emphasis on youth and self-improvement.
+         
+    Poor: 480-519 
+        Proletarii Kredit  (Proletariat Credit): For individuals facing financial challenges, highlighting the need for solidarity and mutual support among comrades in a socialist society.
+         
+    Bad: Below 480 
+        Kontrrevoliutsioner  (Counterrevolutionary Credit): For those whose credit behavior is deemed subversive or contrary to the interests of socialism, requiring close supervision and potential rehabilitation.
+         
