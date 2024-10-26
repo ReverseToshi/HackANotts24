@@ -6,7 +6,6 @@
 -   There are 3 NPCs: 
     -   Comrade Viktor Kuznetsov : A charismatic and influential party member who serves as the protagonist's mentor and guide throughout the game. Viktor is well-versed in Marxist-Leninist theory, but his understanding of finance is limited to state-controlled institutions.
     -   Professor Ivanov : A brilliant economist from Moscow State University who provides the protagonist with insightful lessons on credit and economics. However, his Western influences are viewed with suspicion by the party, making him a valuable resource for players.
-    -   Nina "The Squirrel" : A charming black market trader who introduces the protagonist to the underbelly of Soviet finance. Nina's operations involve buying and selling goods outside of official channels, teaching players about the importance of responsible credit use in high-risk situations.
     -  Colonel Konstantin "Kolya" Petrov : A modern-minded KGB officer dedicated to helping citizens manage their finances. He provides personalized advice on budgeting, debt repayment, and credit score optimization. He focuses on educating and assisting citizens to achieve financial stability, while subtly encouraging responsible spending habits. 
 
 ## Requirements
@@ -24,7 +23,6 @@
     -   Credit/debit amount
     -   Weekly payments
     -   Creditors/debtors
-    -   Police attention
     -   Radios
 -   User needs to achieve a certain goal reputation (maybe to buy a house IN THE VILLAGE)
 -   A central state bank that can lend money to the protagonist
@@ -41,6 +39,8 @@
 ## Nice To Haves
 -   Forex
 -   News from the time
+-   Nina "The Squirrel" : A charming black market trader who introduces the protagonist to the underbelly of Soviet finance. Nina's operations involve buying and selling goods outside of official channels, teaching players about the importance of responsible credit use in high-risk situations.
+-   Police attention
 
 ## Credit Score shit
 Experian Credit Score:  This model uses a scale from 0 to 999, with the following bands:
