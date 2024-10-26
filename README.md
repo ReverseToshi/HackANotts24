@@ -1,2 +1,2 @@
-# HackANotts24
+# HackNotts24
 HackaNotts 2024
