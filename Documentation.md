@@ -34,6 +34,8 @@
 
 ### Non-Functional Requirements
 -   OS-agnostic
+-   Tracking credit score
+-   A record of credit items, balance, rate, and weekly repayments. E.g. credit card, TV with 0% APR, buy now pay later sofa etc.
 -   
 
 ## Nice To Haves
