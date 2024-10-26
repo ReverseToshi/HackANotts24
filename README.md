@@ -1,2 +1,2 @@
 # HackNotts24
-HackaNotts 2024
+HackNotts 2024
