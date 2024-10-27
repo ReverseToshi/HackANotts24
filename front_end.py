@@ -33,7 +33,7 @@ day = Label(1, "Wednesday", 480 + 36 + 380, 36, 300, 72, 36)
 screen = pygame.display.set_mode((WIDTH,HEIGHT))
 clear_colour = (0,0,0)
 running = True
-player = Player("./assets/char/player.png", 880, 550)
+player = Player("./assets/char/player.png", 880, 550, "Toshi")
 
 #bg map
 map = pygame.image.load("./assets/bg/bg_map_moscow.png")
