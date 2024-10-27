@@ -42,7 +42,10 @@
 -   Nina "The Squirrel" : A charming black market trader who introduces the protagonist to the underbelly of Soviet finance. Nina's operations involve buying and selling goods outside of official channels, teaching players about the importance of responsible credit use in high-risk situations.
 -   Police attention
 
-## Credit Score shit
+## Figma
+https://www.figma.com/design/kMvvmNfRRJzNqh761OwL0s/cREDit?node-id=55-70&t=oC960SqXblzG8Uij-1
+
+### Credit Score stuff
 Experian Credit Score:  This model uses a scale from 0 to 999, with the following bands:
 
     Excellent: 720-999
@@ -70,3 +73,5 @@ Here are the Experian credit score bands with Soviet-era inspired equivalents:
     Bad: Below 480 
         Kontrrevoliutsioner  (Counterrevolutionary Credit): For those whose credit behavior is deemed subversive or contrary to the interests of socialism, requiring close supervision and potential rehabilitation.
          
+
+
