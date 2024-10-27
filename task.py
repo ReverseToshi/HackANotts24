@@ -67,8 +67,8 @@ tasks_cost_list = [8, 4, 6, 0, 0, 30, 80, 20, 16, 0, 0, 6, 1]
 tasks_building_list = [2, 1, 1, 7, 8, 6, 5, 3, 3, 3, 5, 1, 2]
 tasks_description_list = ["Buy a loaf of bread.",
                           "Buy vegetables.",
-                          "Buy household items."
-                          "Chat with Professor Ivanov."
+                          "Buy household items.",
+                          "Chat with Professor Ivanov.",
                           "Chat with Comrade Kuznetsov.",
                           "Buy a transistor radio.",
                           "Buy a Lada.",
@@ -131,12 +131,9 @@ def generate_daily_tasks_list():
 
 class Task_list:
     def __init__(self):
-        self.list = [task(0), task(1)]
+        self.list = generate_daily_tasks_list()
         self.header = Label(3, "Tasks", 1440+36, 36, 100, 36, 36)
         self.x = 1440+36
-    
-    def add_tasks(self, task):
-        self.list.append(task)
 
     def display_task_list(self, screen):
         self.header.draw(screen, False, (255,255,255))
@@ -147,7 +144,7 @@ class Task_list:
             y = 1000 - 72*i
             Label(4, self.text, self.x, y, 100, 5, 10).draw(screen, False, (66,71,131))
             self.text = task.description
-            Label(4, self.text, self.x, y+5, 100, 30, 20).draw(screen, False, (255,255,255))
+            Label(4, self.text, self.x, y, 100, 30, 20).draw(screen, False, (255,255,255))
 
     def remove_task(self):
         for task in self.list():

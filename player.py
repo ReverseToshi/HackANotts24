@@ -2,7 +2,7 @@ import pygame
 from sprite import Sprite
 from input import is_key_pressed
 from building import building
-from logic import logic 
+from logic import logic
 
 # buildings
 buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
