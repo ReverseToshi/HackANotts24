@@ -143,7 +143,7 @@ class Task_list:
         for task in self.list:
             i = self.list.index(task)
             self.text = buildings[task.building].friendly_name
-            y = 1080 - 72*i
+            y = 1000 - 72*i
             Label(4, self.text, self.x, y, 100, 5, 10).draw(screen, False, (255,255,255))
             self.text = task.description
             Label(4, self.text, self.x, y, 100, 30, 20).draw(screen, False, (255,255,255))

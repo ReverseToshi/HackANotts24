@@ -2,7 +2,7 @@ import pygame
 from sprite import Sprite
 from input import is_key_pressed
 from building import building
-from logic import logic
+from logic import logic as player_backend
 
 # buildings
 buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
@@ -17,6 +17,7 @@ buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
              building("Gulag", 480+288, 192, 264, 192, "GuLag")]
 
 class Player(Sprite):
+
     size = 20
     def __init__(self, image, x, y):
         super().__init__(image, x, y)
