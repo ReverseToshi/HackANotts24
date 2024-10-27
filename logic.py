@@ -147,6 +147,6 @@ days_of_week = ["Monday",
                 "Friday",
                 "Saturday",
                 "Sunday"]
-current_game_day_of_week = days_of_week[0]
+current_game_day_of_week = None
 def calculate_day_of_week():
-    current_game_day = days_of_week[current_game_day % 7]
+    current_game_day_of_week = days_of_week[current_game_day % 7]

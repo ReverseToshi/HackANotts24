@@ -1,6 +1,8 @@
 from building import building
 from player import buildings
 from logic import current_game_day as day
+from Label import Label
+import pygame
 
 """
 
@@ -63,19 +65,19 @@ Building: Breadnik (2)
 # if task does not require a purchase, this price is 0
 tasks_cost_list = [8, 4, 6, 0, 0, 30, 80, 20, 16, 0, 0, 6, 1]
 tasks_building_list = [2, 1, 1, 7, 8, 6, 5, 3, 3, 3, 5, 1, 2]
-tasks_description_list = ["Buy a loaf of bread from the bakery.",
-                          "Buy vegetables from the grocery shop.",
-                          "Buy household items from the grocery shop."
-                          "Discuss the socio-political state of the world with Professor Ivanov."
+tasks_description_list = ["Buy a loaf of bread\nfrom the bakery.",
+                          "Buy vegetables from\nthe grocery shop.",
+                          "Buy household items from\nthe grocery shop."
+                          "Discuss the socio-political\nstate of the world\nwith Professor Ivanov."
                           "Check in with Comrade Kuznetsov.",
-                          "Stay updated on the latest news from the Kremlin! Buy a transistor radio.",
-                          "You need to get moving! Buy a Lada.",
-                          "It's that time of the week! Pay your bills.",
-                          "It's that time of the week! Pay your bills.",
-                          "Time to get on the property ladder. Take out a mortgage on your apartment.",
-                          "Nina sent you a covert message asking to meet to discuss secret business affairs.",
-                          "Buy meat from the grocery shop.",
-                          "Buy Blini from the bakery."]
+                          "Stay updated on the latest news \nfrom the Kremlin!\nBuy a transistor radio.",
+                          "You need to get\nmoving! Buy a Lada.",
+                          "It's that time of\nthe week! Pay\nyour bills.",
+                          "It's that time of\nthe week! Pay\nyour bills.",
+                          "Time to get on the\nproperty ladder.\nTake out a mortgage\non your apartment.",
+                          "Nina sent you a\ncovert message asking\nto meet to discuss\nsecret business affairs.",
+                          "Buy meat from\nthe grocery shop.",
+                          "Buy Blini from\nthe bakery."]
 
 class task:
     def __init__(self, type_of_task):
@@ -126,3 +128,28 @@ def generate_daily_tasks_list():
 
     # return the array of task objects
     return(tasks_list)
+
+class Task_list:
+    def __init__(self):
+        self.list = [task(0), task(1)]
+        self.header = Label(3, "Tasks", 1440+36, 36, 100, 36, 36)
+        self.x = 1440+36
+    
+    def add_tasks(self, task):
+        self.list.append(task)
+
+    def display_task_list(self, screen):
+        self.header.draw(screen, False, (255,255,255))
+        for task in self.list:
+            i = self.list.index(task)
+            self.text = buildings[task.building].friendly_name
+            y = 1080 - 72*i
+            Label(4, self.text, self.x, y, 100, 5, 10).draw(screen, False, (255,255,255))
+            self.text = task.description
+            Label(4, self.text, self.x, y, 100, 30, 20).draw(screen, False, (255,255,255))
+
+    def remove_task(self):
+        for task in self.list():
+            if task.completed:
+                self.list.remove(task)
+            
