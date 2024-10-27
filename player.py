@@ -4,16 +4,16 @@ from input import is_key_pressed
 from building import building
 
 # buildings
-buildings = [building("Apartment", 480+108, 192, 132, 288),
-             building("Grocery", 480+48, 528, 144, 144),
-             building("Bakery", 480+48, 720, 144, 96),
-             building("Bank", 480+48, 864, 396, 168),
-             building("Autoshop", 480+492, 864, 216, 168),
-             building("Bunker", 480+792, 924, 120, 108),
-             building("Technology", 480+804, 648, 108, 168),
-             building("University", 480+756, 288, 156, 312),
-             building("Party HQ", 480+600, 96, 108, 288),
-             building("Gulag", 480+288, 192, 264, 192)]
+buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
+             building("Grocery", 480+48, 528, 144, 144, "Groverov"),
+             building("Bakery", 480+48, 720, 144, 96), "Breadnik",
+             building("Bank", 480+48, 864, 396, 168, "Gosbank"),
+             building("Autoshop", 480+492, 864, 216, 168, "Lada DeaLership"),
+             building("Bunker", 480+792, 924, 120, 108, "Nina's Bunker"),
+             building("Technology", 480+804, 648, 108, 168, "Techno Store"),
+             building("University", 480+756, 288, 156, 312, "University"),
+             building("Party HQ", 480+600, 96, 108, 288, "Communist Party HQ"),
+             building("Gulag", 480+288, 192, 264, 192, "GuLag")]
 
 class Player(Sprite):
     size = 20
