@@ -63,19 +63,19 @@ Building: Breadnik (2)
 # if task does not require a purchase, this price is 0
 tasks_cost_list = [8, 4, 6, 0, 0, 30, 80, 20, 16, 0, 0, 6, 1]
 tasks_building_list = [2, 1, 1, 7, 8, 6, 5, 3, 3, 3, 5, 1, 2]
-tasks_description_list = ["Buy a loaf of bread from the bakery.",
-                          "Buy vegetables from the grocery shop.",
-                          "Buy household items from the grocery shop."
-                          "Discuss the socio-political state of the world with Professor Ivanov."
-                          "Check in with Comrade Kuznetsov.",
-                          "Stay updated on the latest news from the Kremlin! Buy a transistor radio.",
-                          "You need to get moving! Buy a Lada.",
-                          "It's that time of the week! Pay your bills.",
-                          "It's that time of the week! Pay your bills.",
-                          "Time to get on the property ladder. Take out a mortgage on your apartment.",
-                          "Nina sent you a covert message asking to meet to discuss secret business affairs.",
-                          "Buy meat from the grocery shop.",
-                          "Buy Blini from the bakery."]
+tasks_description_list = ["Buy a loaf of bread.",
+                          "Buy vegetables.",
+                          "Buy household items."
+                          "Chat with Professor Ivanov."
+                          "Chat with Comrade Kuznetsov.",
+                          "Buy a transistor radio.",
+                          "Buy a Lada.",
+                          "Pay your bills.",
+                          "Pay your bills.",
+                          "Take out a mortgage.",
+                          "Meet with Nina.",
+                          "Buy meat.",
+                          "Buy Blini."]
 
 class task:
     def __init__(self, type_of_task):
