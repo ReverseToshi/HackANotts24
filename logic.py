@@ -78,15 +78,15 @@ class logic:
     def check_status(self):
         """Return the reputation status based on the current score."""
         if self.reputation < 480:
-            return "Kontrrevoliutsioner"
+            return "Krov"
         elif 480 <= self.reputation <= 519:
-            return "Proletarii Kredit"
+            return "ProLetarii"
         elif 520 <= self.reputation <= 619:
-            return "Komsomolov Kredit"
+            return "Komsomolov"
         elif 620 <= self.reputation <= 719:
-            return "Rabochii Klass"
+            return "Rabochii"
         elif 720 <= self.reputation <= 999:
-            return "Patriotov Kredit"
+            return "Patriotov"
         else:
             return "Unknown"
 
