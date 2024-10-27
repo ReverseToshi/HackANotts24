@@ -21,7 +21,7 @@ class Player(Sprite):
     size = 20
     def __init__(self, image, x, y, name):
         super().__init__(image, x, y)
-        self.movement_speed = 4
+        self.movement_speed = 2
         self.logic = logic(name)
     
     def update(self):

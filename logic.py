@@ -1,18 +1,22 @@
 from event import Event
 
 class logic:
+
+
     def __init__(self, name):
         """Initialize player with default stats and financial status."""
         self.name = name
+        self.player_event_list = []
         self.reputation = 500  # Starting credit score
-        Event(current_game_day_of_week, 500, "Welcome")
+        self.player_event_list.append(Event(current_game_day_of_week, 500, "Welcome"))
         self.credit_limit = 1000  # Credit card maximum limit
         self.card_balance = 0  # Credit card balance
-        self.current_account_balance = 500  # Debit card balance (cash in hand)
+        self.current_account_balance = 100  # Debit card balance (cash in hand)
         self.strikes = 0  # Strike count for missed payments
         self.weekly_interest_rate = 1.15  # Weekly interest rate (e.g., 15%)
         self.reputation_status = None
         self.cur=0
+        
 
     def __str__(self):
         """Return a string representation of the player's stats."""
@@ -29,9 +33,9 @@ class logic:
     def purchase(self, amount, payment_method):
         """Make a purchase using either the debit or credit card."""
         if payment_method == "debit":
-            self.use_debit(amount)
+            return(self.use_debit(amount))
         elif payment_method == "credit":
-            self.use_credit(amount)
+            return(self.use_credit(amount))
         #else:
             #print("Invalid payment method. Please choose 'debit' or 'credit'.")
 
@@ -39,8 +43,10 @@ class logic:
         """Attempt to make a purchase using the debit card balance."""
         if amount <= self.current_account_balance:
             self.current_account_balance -= amount
+            return("success")
             #print(f"Purchase of {amount} made with debit card. Remaining balance: {self.current_account_balance}.")
         #else:
+            return("fail")
             #print("Insufficient funds on debit card.")
 
     def use_credit(self, amount):
@@ -48,10 +54,12 @@ class logic:
         if amount + self.card_balance <= self.credit_limit:
             self.card_balance += amount
             self.cur=self.card_balance/self.credit_limit
+            return("success")
         else:
             self.reputation-=20
-            Event(current_game_day_of_week, -20, "Purchase would exceed credit limit.")
+            self.player_event_list.append(Event(current_game_day_of_week, -20, "Purchase would exceed credit limit."))
             self.check_status()
+            return("fail")
 
             #print("Purchase exceeds credit limit on credit card.")
 
@@ -70,15 +78,15 @@ class logic:
             if self.card_balance == 0:
                 if 0 < self.cur <= 0.3:
                     self.reputation+=50
-                    Event(current_game_day_of_week, 50, "Balance Cleared")
+                    self.player_event_list.append(Event(current_game_day_of_week, 50, "Balance Cleared"))
                 else:
                     rep_change = round((-71*self.cur)+71)
                     self.reputation+= rep_change
-                    Event(current_game_day_of_week, rep_change, "Balance Cleared")
+                    self.player_event_list.append(Event(current_game_day_of_week, rep_change, "Balance Cleared"))
                 print(f"Payment of {amount} made. Remaining credit card balance: {self.card_balance}.")
         else:
             self.reputation-=50
-            Event(current_game_day_of_week, -50, "Insufficient Funds")
+            self.player_event_list.append(Event(current_game_day_of_week, -50, "Insufficient Funds"))
             self.issue_strike()
             print("Insufficient funds for payment! Strike issued.")
         
@@ -109,7 +117,7 @@ class logic:
     def issue_strike(self):
         """Issue a strike for missed payments or insufficient funds."""
         self.strikes += 1
-        Event(current_game_day_of_week, 0, "Strike Issued")
+        self.player_event_list.append(Event(current_game_day_of_week, 0, "Strike Issued"))
         print(f"Strike {self.strikes} issued.")
         if self.strikes >= 3:
             print("Game over! You've reached the maximum number of strikes.")
