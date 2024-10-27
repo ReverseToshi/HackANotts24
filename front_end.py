@@ -2,6 +2,7 @@ import pygame
 import input
 from player import Player
 from sprite import sprites
+from button import Button
 
 #Window dimensions
 WIDTH = 1920
@@ -21,6 +22,8 @@ pygame.display.set_caption("HackNotts24")
 event_panel = pygame.Rect(0, 0, EVENT_PANEL_WIDTH, HEIGHT)
 main_panel = pygame.Rect(EVENT_PANEL_WIDTH, 0, MAIN_PANEL_WIDTH, HEIGHT)
 info_panel = pygame.Rect(EVENT_PANEL_WIDTH + MAIN_PANEL_WIDTH, 0, INFO_PANEL_WIDTH, HEIGHT)
+menu_btn = Button(0, "./assets/char/menu_button.png", 480+816, 36)
+player_icon = Button(1, "./assets/char/player_icon.png", 480+36, 36)
 
 screen = pygame.display.set_mode((WIDTH,HEIGHT))
 clear_colour = (0,0,0)
@@ -46,6 +49,9 @@ while running:
             input.keys_down.add(event.key)
         elif event.type == pygame.KEYUP:
             input.keys_down.remove(event.key)
+        if menu_btn.is_clicked(event):
+            print(True)
+        
     #for player movements
     if player.x > EVENT_PANEL_WIDTH + MAIN_PANEL_WIDTH - 50:
         player.x -= player.movement_speed
@@ -65,8 +71,11 @@ while running:
     pygame.draw.rect(screen, (100, 100, 100), event_panel)  # Event Panel
     pygame.draw.rect(screen, (200,200,200), main_panel)
     pygame.draw.rect(screen, (100, 100, 100), info_panel)   # Info Panel
-    screen.blit(map, (EVENT_PANEL_WIDTH, 0))
 
+    
+    screen.blit(map, (EVENT_PANEL_WIDTH, 0))
+    menu_btn.draw(screen)
+    player_icon.draw(screen)
     for s in sprites:
         s.draw(screen)
     

@@ -6,7 +6,7 @@ from building import building
 # buildings
 buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
              building("Grocery", 480+48, 528, 144, 144, "Groverov"),
-             building("Bakery", 480+48, 720, 144, 96), "Breadnik",
+             building("Bakery", 480+48, 720, 144, 96, "Breadnik"),
              building("Bank", 480+48, 864, 396, 168, "Gosbank"),
              building("Autoshop", 480+492, 864, 216, 168, "Lada DeaLership"),
              building("Bunker", 480+792, 924, 120, 108, "Nina's Bunker"),
