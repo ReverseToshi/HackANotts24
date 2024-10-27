@@ -1,4 +1,4 @@
-class Player:
+class logic:
     def __init__(self, name):
         """Initialize player with default stats and financial status."""
         self.name = name

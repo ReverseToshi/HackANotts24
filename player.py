@@ -1,6 +1,19 @@
 import pygame
 from sprite import Sprite
 from input import is_key_pressed
+from building import building
+
+# buildings
+buildings = [building("Apartment", 480+108, 192, 132, 288),
+             building("Grocery", 480+48, 528, 144, 144),
+             building("Bakery", 480+48, 720, 144, 96),
+             building("Bank", 480+48, 864, 396, 168),
+             building("Autoshop", 480+492, 864, 216, 168),
+             building("Bunker", 480+792, 924, 120, 108),
+             building("Technology", 480+804, 648, 108, 168),
+             building("University", 480+756, 288, 156, 312),
+             building("Party HQ", 480+600, 96, 108, 288),
+             building("Gulag", 480+288, 192, 264, 192)]
 
 class Player(Sprite):
     size = 20
@@ -9,6 +22,7 @@ class Player(Sprite):
         self.movement_speed = 2
     
     def update(self):
+        self.old_pos=(self.x, self.y)
         if is_key_pressed(pygame.K_w):
             self.y -= self.movement_speed
         if is_key_pressed(pygame.K_s):
@@ -17,5 +31,12 @@ class Player(Sprite):
             self.x -= self.movement_speed
         if is_key_pressed(pygame.K_d):
             self.x += self.movement_speed
+        self.if_collision()
+    
+    def if_collision(self):
+        for blding in buildings:
+            if self.x in range(blding.x-20, blding.x+blding.w) and self.y in range(blding.y -60, blding.y+blding.h):
+                self.x = self.old_pos[0]
+                self.y = self.old_pos[1]
         
         
