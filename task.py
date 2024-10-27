@@ -145,9 +145,9 @@ class Task_list:
             self.text = buildings[task.building].friendly_name
             
             y = 1000 - 72*i
-            Label(4, self.text, self.x, y, 100, 5, 10).draw(screen, False, (255,255,255))
+            Label(4, self.text, self.x, y, 100, 5, 10).draw(screen, False, (66,71,131))
             self.text = task.description
-            Label(4, self.text, self.x, y, 100, 30, 20).draw(screen, False, (255,255,255))
+            Label(4, self.text, self.x, y+5, 100, 30, 20).draw(screen, False, (255,255,255))
 
     def remove_task(self):
         for task in self.list():

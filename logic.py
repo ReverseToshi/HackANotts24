@@ -1,11 +1,11 @@
-from event import event
+from event import Event
 
 class logic:
     def __init__(self, name):
         """Initialize player with default stats and financial status."""
         self.name = name
         self.reputation = 500  # Starting credit score
-        event(current_game_day_of_week, 500, "Welcome")
+        Event(current_game_day_of_week, 500, "Welcome")
         self.credit_limit = 1000  # Credit card maximum limit
         self.card_balance = 0  # Credit card balance
         self.current_account_balance = 500  # Debit card balance (cash in hand)
@@ -50,7 +50,7 @@ class logic:
             self.cur=self.card_balance/self.credit_limit
         else:
             self.reputation-=20
-            event(current_game_day_of_week, -20, "Purchase would exceed credit limit.")
+            Event(current_game_day_of_week, -20, "Purchase would exceed credit limit.")
             self.check_status()
 
             #print("Purchase exceeds credit limit on credit card.")
@@ -70,15 +70,15 @@ class logic:
             if self.card_balance == 0:
                 if 0 < self.cur <= 0.3:
                     self.reputation+=50
-                    event(current_game_day_of_week, 50, "Balance Cleared")
+                    Event(current_game_day_of_week, 50, "Balance Cleared")
                 else:
                     rep_change = round((-71*self.cur)+71)
                     self.reputation+= rep_change
-                    event(current_game_day_of_week, rep_change, "Balance Cleared")
+                    Event(current_game_day_of_week, rep_change, "Balance Cleared")
                 print(f"Payment of {amount} made. Remaining credit card balance: {self.card_balance}.")
         else:
             self.reputation-=50
-            event(current_game_day_of_week, -50, "Insufficient Funds")
+            Event(current_game_day_of_week, -50, "Insufficient Funds")
             self.issue_strike()
             print("Insufficient funds for payment! Strike issued.")
         
@@ -109,7 +109,7 @@ class logic:
     def issue_strike(self):
         """Issue a strike for missed payments or insufficient funds."""
         self.strikes += 1
-        event(current_game_day_of_week, 0, "Strike Issued")
+        Event(current_game_day_of_week, 0, "Strike Issued")
         print(f"Strike {self.strikes} issued.")
         if self.strikes >= 3:
             print("Game over! You've reached the maximum number of strikes.")

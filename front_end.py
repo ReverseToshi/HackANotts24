@@ -5,8 +5,8 @@ from sprite import sprites
 from button import Button
 from Label import Label
 from task import Task_list, task
-from logic import current_game_day
-from logic import current_game_day_of_week
+from logic import *
+from event import *
 
 #Window dimensions
 WIDTH = 1920
@@ -25,6 +25,7 @@ event_panel = pygame.Rect(0, 0, EVENT_PANEL_WIDTH, HEIGHT)
 main_panel = pygame.Rect(EVENT_PANEL_WIDTH, 0, MAIN_PANEL_WIDTH, HEIGHT)
 task_panel = pygame.Rect(EVENT_PANEL_WIDTH + MAIN_PANEL_WIDTH, 0, INFO_PANEL_WIDTH, HEIGHT)
 task_list = Task_list()
+event_list = Event_panel()
 
 menu_btn = Button(0, "./assets/char/menu_button.png", 480+826, 36)
 player_icon = Button(1, "./assets/char/player_icon.png", 480+36, 36)
@@ -79,6 +80,7 @@ while running:
     pygame.draw.rect(screen, (0, 2, 25), task_panel)   # Info Panel
 
     task_list.display_task_list(screen)
+    event_list.draw(screen)
     
     screen.blit(map, (EVENT_PANEL_WIDTH, 0))
     menu_btn.draw(screen)
