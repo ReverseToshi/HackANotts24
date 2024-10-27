@@ -17,7 +17,7 @@
 - Stats that will be tracked:
     -   'Reputation' (credit score)
         -   0-999
-        -   Different ranges have an associated soviet-themed title
+        -   Different ranges have an associated soviet-themed title (see below)
         -   Player privileges vary based on rank/title
     -   Credit limit
     -   Credit/debit amount
