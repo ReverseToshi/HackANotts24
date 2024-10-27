@@ -8,6 +8,18 @@ from task import Task_list, task
 from logic import *
 from event import *
 
+modal_needs_drawing = False
+
+class purchase_modal:
+    
+    def __init__(self, item_id, screen):
+        self.id = item_id
+        global modal
+        modal = pygame.image.load("./assets/cards/payment_modal.png")
+        modal = pygame.transform.scale(modal, (800, 600))
+        global modal_needs_drawing
+        modal_needs_drawing = True
+
 #Window dimensions
 WIDTH = 1920
 HEIGHT = 1080
@@ -57,8 +69,11 @@ while running:
             building_list = []
             for task in task_list.list:
                 building_list.append(task.building)
-            if hit_building in building_list:
-                
+            if hit_building.number in building_list:
+                indx = building_list.index(hit_building.number)
+                new_modal = purchase_modal(indx,screen)
+                print(indx)
+
         
     #for player movements
     if player.x > EVENT_PANEL_WIDTH + MAIN_PANEL_WIDTH - 50:
@@ -95,8 +110,12 @@ while running:
     day.draw(screen, True)
     for s in sprites:
         s.draw(screen)
+
+    if modal_needs_drawing:
+        screen.blit(modal, (560, 276))
     
     pygame.display.flip()
 
     pygame.time.delay(17)
 pygame.quit()
+    
