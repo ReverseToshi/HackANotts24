@@ -51,4 +51,7 @@ class Player(Sprite):
     def interact(self):
         for blding in buildings:
             if self.x in range(blding.x-22, blding.x+blding.w +22) and self.y in range(blding.y -60 -22, blding.y+blding.h+22):
-                print(blding)
+                return blding
+        else:
+            return None
+                    
