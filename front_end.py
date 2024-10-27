@@ -126,8 +126,8 @@ while running:
     menu_btn.draw(screen)
     player_icon.draw(screen)
     interact_btn.draw(screen)
-    rep.draw(screen, True)
-    day.draw(screen, True)
+    rep.draw(screen, True, (255, 255, 255))
+    day.draw(screen, True, (255, 255, 255))
     for s in sprites:
         s.draw(screen)
 
