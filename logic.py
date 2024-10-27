@@ -14,7 +14,7 @@ class logic:
         self.current_account_balance = 100  # Debit card balance (cash in hand)
         self.strikes = 0  # Strike count for missed payments
         self.weekly_interest_rate = 1.15  # Weekly interest rate (e.g., 15%)
-        self.reputation_status = None
+        self.reputation_status = "ProLeteriat"
         self.cur=0
         
 
@@ -169,6 +169,7 @@ days_of_week = ["Monday",
                 "Friday",
                 "Saturday",
                 "Sunday"]
-current_game_day_of_week = None
+current_game_day_of_week = "Monday"
 def calculate_day_of_week():
+    global current_game_day_of_week
     current_game_day_of_week = days_of_week[current_game_day % 7]

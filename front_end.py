@@ -60,9 +60,13 @@ dbt = Button(0, "./assets/cards/card_debit.png", crdCoords[0]+526, crdCoords[1],
 map = pygame.image.load("./assets/bg/bg_map_moscow.png")
 map = pygame.transform.scale(map, (MAIN_PANEL_WIDTH, HEIGHT))
 
+rep = Label(0,f"{player.logic.reputation_status}", 480+36+108, 36, 300, 72, 30)
+day = Label(1, str(current_game_day_of_week) , 480 + 72 + 380, 36, 300, 72, 30)
+
 #Mainloop
 while running:
     #for events
+    calculate_day_of_week()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running=False
@@ -109,8 +113,6 @@ while running:
 
 
     player.update()
-    rep = Label(0,player.logic.reputation_status, 480+36+108, 36, 300, 72, 30)
-    day = Label(1, current_game_day_of_week , 480 + 36 + 380, 36, 300, 72, 30)
     
     #drawing screen
     screen.fill(clear_colour)
@@ -126,8 +128,8 @@ while running:
     menu_btn.draw(screen)
     player_icon.draw(screen)
     interact_btn.draw(screen)
-    rep.draw(screen, True, (255, 255, 255))
-    day.draw(screen, True, (255, 255, 255))
+    rep.draw(screen, True)
+    day.draw(screen, True)
     for s in sprites:
         s.draw(screen)
 
