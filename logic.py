@@ -1,3 +1,5 @@
+from event import event
+
 class logic:
     def __init__(self, name):
         """Initialize player with default stats and financial status."""
@@ -47,6 +49,7 @@ class logic:
             self.cur=self.card_balance/self.credit_limit
         else:
             self.reputation-=20
+            event(current_game_day_of_week, -20, "Purchase would exceed credit limit.")
             self.check_status()
 
             #print("Purchase exceeds credit limit on credit card.")
@@ -62,11 +65,15 @@ class logic:
         if amount <= self.current_account_balance:
             self.current_account_balance -= amount
             self.card_balance -= amount
-            if 0 < self.cur <= 0.3:
-                self.reputation+=50
-            else:
-                self.reputation+= round((-71*self.cur)+71)
-            print(f"Payment of {amount} made. Remaining credit card balance: {self.card_balance}.")
+            calculate_cur()
+            if self.card_balance == 0:
+                
+                if 0 < self.cur <= 0.3:
+                    self.reputation+=50
+                    event(current_game_day_of_week, 50, "Balance Cleared")
+                else:
+                    self.reputation+= round((-71*self.cur)+71)
+                print(f"Payment of {amount} made. Remaining credit card balance: {self.card_balance}.")
         else:
             self.reputation-=50
             self.issue_strike()
@@ -129,6 +136,9 @@ class logic:
         else:
             print("Invalid choice. You missed the payment.")
             self.issue_strike()
+
+    def calculate_cur(self):
+        self.cur = self.card_balance / self.credit_limit
 
     def weekly_update(self):
         """Perform weekly updates: prompt for payment and apply interest."""
