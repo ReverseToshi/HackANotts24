@@ -6,7 +6,7 @@ from logic import logic
 
 # buildings
 buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
-             building("Grocery", 480+48, 528, 144, 144, "Groverov"),
+             building("Grocery", 480+48, 528, 144, 144, "Grocerov"),
              building("Bakery", 480+48, 720, 144, 96, "Breadnik"),
              building("Bank", 480+48, 864, 396, 168, "Gosbank"),
              building("Autoshop", 480+492, 864, 216, 168, "Lada DeaLership"),
@@ -51,6 +51,7 @@ class Player(Sprite):
     def interact(self):
         for blding in buildings:
             if self.x in range(blding.x-22, blding.x+blding.w +22) and self.y in range(blding.y -60 -22, blding.y+blding.h+22):
+                print(blding.friendly_name)
                 return blding
         else:
             return None

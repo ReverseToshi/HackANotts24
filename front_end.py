@@ -53,7 +53,12 @@ while running:
         if menu_btn.is_clicked(event):
             print(True)
         if interact_btn.is_clicked(event):
-            player.interact()
+            hit_building = player.interact()
+            building_list = []
+            for task in task_list.list:
+                building_list.append(task.building)
+            if hit_building in building_list:
+                
         
     #for player movements
     if player.x > EVENT_PANEL_WIDTH + MAIN_PANEL_WIDTH - 50:
