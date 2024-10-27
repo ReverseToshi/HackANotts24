@@ -134,6 +134,13 @@ class Task_list:
         self.list = generate_daily_tasks_list()
         self.header = Label(3, "Tasks", 1440+36, 36, 100, 36, 36)
         self.x = 1440+36
+        self.building_list = []
+
+    def update_building_list(self):
+        self.building_list = []
+        for task in self.list():
+            self.building_list.append(task.building)
+        print(self.building_list)
 
     def display_task_list(self, screen):
         self.header.draw(screen, False, (255,255,255))
@@ -150,4 +157,7 @@ class Task_list:
         for task in self.list():
             if task.completed:
                 self.list.remove(task)
+                self.building_list.remove(task)
+                self.update_building_list()
+
             
