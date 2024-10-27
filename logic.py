@@ -136,3 +136,17 @@ class logic:
         self.monday_payment_option()
         self.apply_interest()
 
+
+
+#this is the current day in the game. rolls over 
+current_game_day = 0
+days_of_week = ["Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"]
+current_game_day_of_week = days_of_week[0]
+def calculate_day_of_week():
+    current_game_day = days_of_week[current_game_day % 7]

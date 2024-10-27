@@ -12,7 +12,7 @@ buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
              building("Bunker", 480+792, 924, 120, 108, "Nina's Bunker"),
              building("Technology", 480+804, 648, 108, 168, "Techno Store"),
              building("University", 480+756, 288, 156, 312, "University"),
-             building("Party HQ", 480+600, 96, 108, 288, "Communist Party HQ"),
+             building("Party HQ", 480+600, 96, 108, 288, "Stary Senat"),
              building("Gulag", 480+288, 192, 264, 192, "GuLag")]
 
 class Player(Sprite):
