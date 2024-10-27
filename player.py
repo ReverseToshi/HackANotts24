@@ -2,11 +2,7 @@ import pygame
 from sprite import Sprite
 from input import is_key_pressed
 from building import building
-<<<<<<< HEAD
-from logic import logic
-=======
 from logic import logic 
->>>>>>> 72d59334c72dec424c2a8e5fa1a28e5c1943b2b8
 
 # buildings
 buildings = [building("Apartment", 480+108, 192, 132, 288, "Apartment"),
@@ -39,6 +35,10 @@ class Player(Sprite):
         if is_key_pressed(pygame.K_d):
             self.x += self.movement_speed
         self.if_collision()
+
+        # backend update stuff
+        self.logic.calculate_cur()
+        self.logic.check_status()
     
     def if_collision(self):
         for blding in buildings:
@@ -51,4 +51,4 @@ class Player(Sprite):
     def interact(self):
         for blding in buildings:
             if self.x in range(blding.x-22, blding.x+blding.w +22) and self.y in range(blding.y -60 -22, blding.y+blding.h+22):
-                print(True)
+                print(blding)

@@ -5,6 +5,8 @@ from sprite import sprites
 from button import Button
 from Label import Label
 from task import Task_list, task
+from logic import current_game_day
+from logic import current_game_day_of_week
 
 #Window dimensions
 WIDTH = 1920
@@ -27,8 +29,6 @@ task_list = Task_list()
 menu_btn = Button(0, "./assets/char/menu_button.png", 480+826, 36)
 player_icon = Button(1, "./assets/char/player_icon.png", 480+36, 36)
 interact_btn = Button(2, "./assets/char/going_in.png", 480 + 730, 36)
-rep = Label(0,"Proletarii", 480+36+108, 36, 300, 72, 30)
-day = Label(1, "Wednesday", 480 + 36 + 380, 36, 300, 72, 30)
 
 screen = pygame.display.set_mode((WIDTH,HEIGHT))
 clear_colour = (0,0,0)
@@ -66,7 +66,12 @@ while running:
         print(player.y)
         player.y -= player.movement_speed
 
+
+
     player.update()
+    rep = Label(0,player.logic.reputation_status, 480+36+108, 36, 300, 72, 30)
+    day = Label(1, current_game_day_of_week , 480 + 36 + 380, 36, 300, 72, 30)
+    
     #drawing screen
     screen.fill(clear_colour)
     pygame.draw.rect(screen, (0, 2, 25), event_panel)  # Event Panel
